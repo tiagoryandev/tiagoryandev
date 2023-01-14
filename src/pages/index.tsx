@@ -32,15 +32,17 @@ const Home: NextPage = () => {
 					<div className="flex gap-4">
 						<div className="border-l-2 border-slate-700" />
 						<div>
-							<h3 className="text-md text-zinc-300 font-bold hover:underline cursor-pointer"><a href="https://busquedevs.com.br/">BusqueDevs</a></h3>
+							<h3 className="text-md text-zinc-300 font-bold"><a className="hover:underline cursor-pointer" href="https://busquedevs.com.br/">BusqueDevs</a><span className="ml-2 px-2 py-1 text-xs text-zinc-100 font-normal bg-emerald-600 rounded">Em Breve</span></h3>
 							<p className="text-sm text-zinc-300">Está afim de procurar um bom programador para trabalhar no seu projeto ou empresa? Então você chegou no lugar certo, pois a BusqueDevs fornece uma plataforma que ajuda a conectar você com diversos desenvolvedores do Brasil.</p>
+							<span className="text-xs text-zinc-400">Agosto de 2022 - até o momento</span>
 						</div>
 					</div>
 					<div className="flex gap-4">
 						<div className="border-l-2 border-slate-700" />
 						<div>
-							<h3 className="text-md text-zinc-300 font-bold hover:underline cursor-pointer"><a href="https://busquedevs.com.br/">Finances App</a></h3>
+							<h3 className="text-md text-zinc-300 font-bold"><a className="hover:underline cursor-pointer" href="https://github.com/FinancesApp">Finances App</a><span className="ml-2 px-2 py-1 text-xs text-zinc-100 font-normal bg-emerald-600 rounded">Projeto Arquivado</span></h3>
 							<p className="text-sm text-zinc-300">O Serviço para Gerenciar suas Receitas e Despesas. Esse é um projeto feito para ajudar pessoas com problemas para gerenciar suas receitas e despesas, assim dando um controle online sobre o que você recebeu e gastou no seu mês.</p>
+							<span className="text-xs text-zinc-400">Fevereiro de 2022 - Julho de 2022</span>
 						</div>
 					</div>
 				</div>
