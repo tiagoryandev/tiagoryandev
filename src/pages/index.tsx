@@ -46,6 +46,16 @@ const Home: NextPage = () => {
 						</div>
 					</div>
 				</div>
+				<div className="my-4 w-full border-t-2 border-slate-700" />
+				<h2 className="mb-2 text-xl text-zinc-300 font-bold">Contatos e Redes Sociais</h2>
+				<ul className="flex flex-col gap-2">
+					<li className="text-zinc-300 text-sm">Linkedin: <a className="text-blue-500 hover:underline" href="https://www.linkedin.com/in/tiagoryan">tiagoryan</a></li>
+					<li className="text-zinc-300 text-sm">Twitter: <a className="text-blue-500 hover:underline" href="https://twitter.com/tiagoryandev">@tiagoryandev</a></li>
+					<li className="text-zinc-300 text-sm">Instagram: <a className="text-blue-500 hover:underline" href="https://instagram.com/tiagoryandev">@tiagoryandev</a></li>
+					<li className="text-zinc-300 text-sm">Github: <a className="text-blue-500 hover:underline" href="https://github.com/tiagoryandev">tiagoryandev</a></li>
+					<li className="text-zinc-300 text-sm">Email: <a className="text-blue-500 hover:underline" href="maito:tiagoryandev@gmail.com">tiagoryandev@gmail.com</a></li>
+					<li className="text-zinc-300 text-sm">WhatsApp: <span className="px-2 py-1 bg-slate-900 rounded">+55 93 98412 1976</span></li>
+				</ul>
 			</div>
 			<footer className="mb-5 text-zinc-500 text-center text-sm">Copyright &copy; {new Date().getFullYear()} - BusqueDevs</footer>
 		</>
