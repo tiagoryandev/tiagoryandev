@@ -8,10 +8,10 @@ const Home: NextPage = () => {
 	return (
 		<>
 			<Head>
-				<title>Tiago Ryan | FrontEnd & BackEnd Developer</title>
+				<title>Tiago Ryan | Programador BackEnd</title>
 			</Head>
 			<h1 className="mt-10 text-zinc-100 text-center text-2xl font-bold">Bem-vindo ao meu Portfólio</h1>
-			<div className="mx-auto mt-5 p-4 w-full max-w-xl h-60 border-2 bg-slate-800 border-slate-700 rounded shadow-2xl">
+			<div className="mx-auto mt-5 p-4 w-full max-w-xl border-2 bg-slate-800 border-slate-700 rounded shadow-2xl">
 				<div className="flex items-center gap-4">
 					<div className="w-28 h-28 border-2 bg-cover bg-center bg-[url(https://github.com/tiagoryandev.png)] border-slate-700 rounded" />
 					<div className="flex flex-col gap-1">
@@ -24,6 +24,26 @@ const Home: NextPage = () => {
 					</div>
 				</div>
 				<div className="my-4 w-full border-t-2 border-slate-700" />
+				<h2 className="mb-2 text-xl text-zinc-300 font-bold">Biografia</h2>
+				<p className="text-zinc-300">Sou Tiago Ryan, tenho 17 anos, moro na cidade de Prainha no Pará e estou estudando no Ensino Médio na 2º Série. Estou com mais de 3 anos de estudos em programação e desenvolvimento web, adquirindo muita experiencia durante meus estudos.</p>
+				<div className="my-4 w-full border-t-2 border-slate-700" />
+				<h2 className="mb-2 text-xl text-zinc-300 font-bold">Projetos</h2>
+				<div className="flex flex-col gap-2">
+					<div className="flex gap-4">
+						<div className="border-l-2 border-slate-700" />
+						<div>
+							<h3 className="text-md text-zinc-300 font-bold hover:underline cursor-pointer"><a href="https://busquedevs.com.br/">BusqueDevs</a></h3>
+							<p className="text-sm text-zinc-300">Está afim de procurar um bom programador para trabalhar no seu projeto ou empresa? Então você chegou no lugar certo, pois a BusqueDevs fornece uma plataforma que ajuda a conectar você com diversos desenvolvedores do Brasil.</p>
+						</div>
+					</div>
+					<div className="flex gap-4">
+						<div className="border-l-2 border-slate-700" />
+						<div>
+							<h3 className="text-md text-zinc-300 font-bold hover:underline cursor-pointer"><a href="https://busquedevs.com.br/">Finances App</a></h3>
+							<p className="text-sm text-zinc-300">O Serviço para Gerenciar suas Receitas e Despesas. Esse é um projeto feito para ajudar pessoas com problemas para gerenciar suas receitas e despesas, assim dando um controle online sobre o que você recebeu e gastou no seu mês.</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</>
 	);
