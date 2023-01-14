@@ -10,8 +10,8 @@ const Home: NextPage = () => {
 			<Head>
 				<title>Tiago Ryan | Programador BackEnd</title>
 			</Head>
-			<h1 className="mt-10 text-zinc-100 text-center text-2xl font-bold">Bem-vindo ao meu Portfólio</h1>
-			<div className="mx-auto mt-5 p-4 w-full max-w-xl border-2 bg-slate-800 border-slate-700 rounded shadow-2xl">
+			<h1 className="mt-5 text-zinc-100 text-center text-2xl font-bold">Bem-vindo ao meu Portfólio</h1>
+			<div className="mx-auto my-5 p-4 w-full max-w-xl border-2 bg-slate-800 border-slate-700 rounded shadow-2xl">
 				<div className="flex items-center gap-4">
 					<div className="w-28 h-28 border-2 bg-cover bg-center bg-[url(https://github.com/tiagoryandev.png)] border-slate-700 rounded" />
 					<div className="flex flex-col gap-1">
@@ -47,6 +47,7 @@ const Home: NextPage = () => {
 					</div>
 				</div>
 			</div>
+			<footer className="mb-5 text-zinc-500 text-center text-sm">Copyright &copy; {new Date().getFullYear()} - BusqueDevs</footer>
 		</>
 	);
 };
