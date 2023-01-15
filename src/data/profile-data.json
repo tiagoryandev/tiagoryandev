@@ -1,0 +1,46 @@
+{
+  "avatarURL": "https://github.com/tiagoryandev.png",
+  "fullName": "Tiago Ryan",
+  "userBagde": "Junior",
+  "occupation": "Programador BackEnd",
+  "location": "Prainha/PA - Brasil",
+  "biography": "Sou Tiago Ryan, tenho 17 anos, moro na cidade de Prainha no Pará e estou estudando no Ensino Médio na 2º Série. Estou com mais de 3 anos de estudos em programação e desenvolvimento web, adquirindo muita experiencia durante meus estudos.",
+  "projects": [
+    {
+      "title": "BusqueDevs",
+      "bagde": "Em Breve",
+      "description": "Está afim de procurar um bom programador para trabalhar no seu projeto ou empresa? Então você chegou no lugar certo, pois a BusqueDevs fornece uma plataforma que ajuda a conectar você com diversos desenvolvedores do Brasil.",
+      "timestamp": "Agosto de 2022 - até o momento",
+      "projectURL": "https://busquedevs.com.br"
+    },
+    {
+      "title": "Finances App",
+      "bagde": "Projeto Arquivado",
+      "description": "O Serviço para Gerenciar suas Receitas e Despesas. Esse é um projeto feito para ajudar pessoas com problemas para gerenciar suas receitas e despesas, assim dando um controle online sobre o que você recebeu e gastou no seu mês.",
+      "timestamp": "Fevereiro de 2022 - Julho de 2022",
+      "projectURL": "https://github.com/tiagoryandev/financesapp-website"
+    }
+  ],
+  "links": [
+    {
+      "name": "Linkedin",
+      "value": "tiagoryan",
+      "url": "https://www.linkedin.com/in/tiagoryan"
+    },
+    {
+      "name": "Twitter",
+      "value": "@tiagoryandev",
+      "url": "https://twitter.com/tiagoryandev"
+    },
+    {
+      "name": "Github",
+      "value": "tiagoryandev",
+      "url": "https://github.com/tiagoryandev"
+    },
+    {
+      "name": "Email",
+      "value": "tiagoryandev@gmail.com",
+      "url": "maito:tiagoryandev@gmail.com"
+    }
+  ]
+}
