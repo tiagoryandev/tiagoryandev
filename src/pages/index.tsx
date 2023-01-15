@@ -20,7 +20,7 @@ const Home: NextPage<HomeProps> = ({
 	return (
 		<>
 			<Head>
-				<title>{fullName} | {occupation}</title>
+				<title>{`${fullName} | ${occupation}`}</title>
 			</Head>
 			<h1 className="mt-5 text-zinc-100 text-center text-2xl font-bold">Bem-vindo ao meu Portfólio</h1>
 			<div className="mx-auto my-5 p-4 w-full max-w-xl border-2 bg-slate-800 border-slate-700 rounded shadow-2xl">
@@ -47,29 +47,25 @@ const Home: NextPage<HomeProps> = ({
 						bagde,
 						description,
 						timestamp
-					}) => (
-						<>
-							<div className="flex gap-4">
-								<div className="border-l-2 border-slate-700" />
-								<div>
-									<h3 className="text-md text-zinc-300 font-bold">
-										<a className="hover:underline cursor-pointer" href={projectURL}>{title}</a>
-										<span className="ml-2 px-2 py-1 text-xs text-zinc-100 font-normal bg-emerald-600 rounded">{bagde}</span>
-									</h3>
-									<p className="text-sm text-zinc-300">{description}</p>
-									<span className="text-xs text-zinc-400">{timestamp}</span>
-								</div>
+					}, key) => (
+						<div key={key} className="flex gap-4">
+							<div className="border-l-2 border-slate-700" />
+							<div>
+								<h3 className="text-md text-zinc-300 font-bold">
+									<a className="hover:underline cursor-pointer" href={projectURL}>{title}</a>
+									<span className="ml-2 px-2 py-1 text-xs text-zinc-100 font-normal bg-emerald-600 rounded">{bagde}</span>
+								</h3>
+								<p className="text-sm text-zinc-300">{description}</p>
+								<span className="text-xs text-zinc-400">{timestamp}</span>
 							</div>
-						</>
+						</div>
 					))}
 				</div>
 				<div className="my-4 w-full border-t-2 border-slate-700" />
 				<h2 className="mb-2 text-xl text-zinc-300 font-bold">Contatos e Redes Sociais</h2>
 				<ul className="flex flex-col gap-2">
-					{links.map(({ name, value, url }) => (
-						<>
-							<li className="text-zinc-300 text-sm">{name}: <a className="text-blue-500 hover:underline" href={url}>{value}</a></li>
-						</>
+					{links.map(({ name, value, url }, key) => (
+						<li key={key} className="text-zinc-300 text-sm">{name}: <a className="text-blue-500 hover:underline" href={url}>{value}</a></li>
 					))}
 				</ul>
 			</div>
