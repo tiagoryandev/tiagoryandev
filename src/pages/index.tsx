@@ -14,6 +14,7 @@ const Home: NextPage<HomeProps> = ({
 	occupation,
 	location,
 	biography,
+	skills,
 	projects,
 	links
 }) => {
@@ -38,6 +39,13 @@ const Home: NextPage<HomeProps> = ({
 				<div className="my-4 w-full border-t-2 border-slate-700" />
 				<h2 className="mb-2 text-xl text-zinc-300 font-bold">Biografia</h2>
 				<p className="text-zinc-300">{biography}</p>
+				<div className="my-4 w-full border-t-2 border-slate-700" />
+				<h2 className="mb-2 text-xl text-zinc-300 font-bold">Tecnologias</h2>
+				<div className="flex flex-wrap gap-4">
+					{skills.map((skill, key) => (
+						<span key={key} className="px-2 py-1 text-zinc-100 border-2 border-transparent bg-slate-700 hover:border-slate-600 cursor-pointer rounded">{skill}</span>
+					))}
+				</div>
 				<div className="my-4 w-full border-t-2 border-slate-700" />
 				<h2 className="mb-2 text-xl text-zinc-300 font-bold">Projetos</h2>
 				<div className="flex flex-col gap-2">

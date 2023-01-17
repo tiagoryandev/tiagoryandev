@@ -5,6 +5,17 @@
   "occupation": "Programador BackEnd",
   "location": "Prainha/PA - Brasil",
   "biography": "Sou Tiago Ryan, tenho 17 anos, moro na cidade de Prainha no Pará e estou estudando no Ensino Médio na 2º Série. Estou com mais de 3 anos de estudos em programação e desenvolvimento web, adquirindo muita experiencia durante meus estudos.",
+  "skills": [
+    "JavaScript",
+    "TypeScript",
+    "NodeJS",
+    "ReactJS",
+    "NextJS",
+    "TailwindCSS",
+    "Styled-Components",
+    "MySQL",
+    "Prisma"
+  ],
   "projects": [
     {
       "title": "BusqueDevs",
