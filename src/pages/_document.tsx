@@ -9,7 +9,12 @@ import {
 const Document = () => {
 	return (
 		<Html lang="pt">
-			<Head />
+			<Head>
+				<meta name="description" content="Portfólio de Programador do Tiago Ryan." />
+				<meta name="keywords" content="Programador,BackEnd,JavaScript,React.js,Node.js,Portfolio" />
+				<meta name="google-site-verification" content="hHS5ewQ2F9nhmoltyJwvXYykswtBuKUs1ud4YQd88tg" />
+				<meta name="robots" content="index,follow"></meta>
+			</Head>
 			<body className="bg-slate-900">
 				<Main />
 				<NextScript />
