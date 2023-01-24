@@ -3,6 +3,8 @@ import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 
 import Header from "@/components/Header";
+import Separator from "@/components/Separator";
+import TitleArea from "@/components/TitleArea";
 import profileData from "../data/profile-data.json";
 
 type HomeProps = typeof profileData;
@@ -32,18 +34,18 @@ const Home: NextPage<HomeProps> = ({
 					occupation={occupation}
 					location={location}
 				/>
-				<div className="my-4 w-full border-t-2 border-slate-700" />
-				<h2 className="mb-2 text-xl text-zinc-300 font-bold">Biografia</h2>
-				<p className="text-zinc-300">{biography}</p>
-				<div className="my-4 w-full border-t-2 border-slate-700" />
-				<h2 className="mb-2 text-xl text-zinc-300 font-bold">Tecnologias</h2>
+				<Separator />
+				<TitleArea>Biografia</TitleArea>
+				<p className="text-zinc-300 select-none">{biography}</p>
+				<Separator />
+				<TitleArea>Tecnologias</TitleArea>
 				<div className="flex flex-wrap gap-2">
 					{skills.map((skill, key) => (
 						<span key={key} className="px-2 py-1 text-sm text-zinc-100 border-2 border-transparent bg-slate-700 hover:border-slate-600 cursor-pointer rounded">{skill}</span>
 					))}
 				</div>
-				<div className="my-4 w-full border-t-2 border-slate-700" />
-				<h2 className="mb-2 text-xl text-zinc-300 font-bold">Projetos</h2>
+				<Separator />
+				<TitleArea>Projetos</TitleArea>
 				<div className="flex flex-col gap-2">
 					{projects.map(({
 						title,
@@ -65,8 +67,8 @@ const Home: NextPage<HomeProps> = ({
 						</div>
 					))}
 				</div>
-				<div className="my-4 w-full border-t-2 border-slate-700" />
-				<h2 className="mb-2 text-xl text-zinc-300 font-bold">Contatos e Redes Sociais</h2>
+				<Separator />
+				<TitleArea>Contatos e TitleArea Sociais</TitleArea>
 				<ul className="flex flex-col gap-2">
 					{links.map(({ name, value, url }, key) => (
 						<li key={key} className="text-zinc-300 text-sm">{name}: <a className="text-blue-500 hover:underline" href={url}>{value}</a></li>
