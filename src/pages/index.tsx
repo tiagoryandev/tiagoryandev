@@ -9,45 +9,30 @@ import profileData from "../data/profile-data.json";
 
 type HomeProps = typeof profileData;
 
-const Home: NextPage<HomeProps> = ({
-	avatarURL,
-	fullName,
-	developerBagde,
-	occupation,
-	location,
-	biography,
-	skills,
-	projects,
-	links
-}) => {
+const Home: NextPage<HomeProps> = (props) => {
 	return (
 		<>
 			<Head>
-				<title>{`${fullName} | ${occupation}`}</title>
+				<title>{`${props.fullName} | ${props.occupation}`}</title>
 			</Head>
-			<h1 className="mt-5 text-zinc-100 text-center text-2xl font-bold">Bem-vindo ao meu Portfólio</h1>
-			<div className="mx-auto my-5 p-4 w-full max-w-xl border-2 bg-slate-800 border-slate-700 rounded shadow-2xl">
+			<div className="mx-auto mt-10 mb-5 p-4 w-full max-w-xl border-2 bg-slate-800 border-slate-700 rounded shadow-2xl">
 				<Header
-					avatarURL={avatarURL}
-					fullName={fullName}
-					developerBagde={developerBagde}
-					occupation={occupation}
-					location={location}
+					{...props}
 				/>
 				<Separator />
 				<TitleArea>Biografia</TitleArea>
-				<p className="text-zinc-300 select-none">{biography}</p>
+				<p className="text-zinc-300 select-none">{props.biography}</p>
 				<Separator />
 				<TitleArea>Tecnologias</TitleArea>
 				<div className="flex flex-wrap gap-2">
-					{skills.map((skill, key) => (
-						<span key={key} className="px-2 py-1 text-sm text-zinc-100 border-2 border-transparent bg-slate-700 hover:border-slate-600 cursor-pointer rounded">{skill}</span>
+					{props.skills.map((skill, key) => (
+						<span key={key} className="px-2 py-1 text-sm text-zinc-100 border-2 border-transparent bg-slate-700 hover:border-slate-600 cursor-pointer select-none rounded">{skill}</span>
 					))}
 				</div>
 				<Separator />
 				<TitleArea>Projetos</TitleArea>
 				<div className="flex flex-col gap-2">
-					{projects.map(({
+					{props.projects.map(({
 						title,
 						projectURL,
 						bagde,
@@ -70,7 +55,7 @@ const Home: NextPage<HomeProps> = ({
 				<Separator />
 				<TitleArea>Contatos e TitleArea Sociais</TitleArea>
 				<ul className="flex flex-col gap-2">
-					{links.map(({ name, value, url }, key) => (
+					{props.links.map(({ name, value, url }, key) => (
 						<li key={key} className="text-zinc-300 text-sm">{name}: <a className="text-blue-500 hover:underline" href={url}>{value}</a></li>
 					))}
 				</ul>
