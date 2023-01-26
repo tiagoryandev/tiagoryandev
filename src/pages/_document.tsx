@@ -15,7 +15,7 @@ const Document = () => {
 				<meta name="google-site-verification" content="hHS5ewQ2F9nhmoltyJwvXYykswtBuKUs1ud4YQd88tg" />
 				<meta name="robots" content="index,follow"></meta>
 			</Head>
-			<body className="bg-slate-900">
+			<body>
 				<Main />
 				<NextScript />
 			</body>
