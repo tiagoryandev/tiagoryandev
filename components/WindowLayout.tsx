@@ -8,7 +8,7 @@ import WindowFooter from "./WindowFooter";
 
 const WindowLayout: React.FC = () => {
 	return (
-		<div className="grid grid-cols-[50px_200px_auto] grid-rows-[30px_auto_30px] w-full max-w-4xl h-full max-h-[550px] bg-slate-900 overflow-clip shadow-[0px_0px_20px_rgba(0,0,0,0.5)] rounded-lg">
+		<div className="grid grid-cols-[50px_200px_auto] grid-rows-[30px_auto_24px] w-full max-w-4xl h-full max-h-[550px] bg-slate-900 overflow-clip shadow-[0px_0px_20px_rgba(0,0,0,0.5)] rounded-lg">
 			<WindowHeader />
 			<WindowSidebar />
 			<WindowExplorer />
