@@ -26,9 +26,9 @@ const WindowFooter: React.FC = () => {
 					<VscFeedback className="text-sm text-zinc-100" />
 					<VscBell className="text-sm text-zinc-100" />
 				</div>
-				<div className="flex items-center gap-1 px-2 h-full hover:bg-violet-700 cursor-pointer">
+				<div className="flex items-center gap-2 px-2 h-full hover:bg-violet-700 cursor-pointer">
 					<VscGithubAlt className="text-sm text-zinc-100" />
-					<Link href="https://github.com/tiagoryandev/tiagoryandev" className="text-sm text-zinc-100 select-none">Github</Link>
+					<Link href="https://github.com/tiagoryandev/tiagoryandev" className="text-xs text-zinc-100 select-none">Github</Link>
 				</div>
 			</div>
 		</div>
