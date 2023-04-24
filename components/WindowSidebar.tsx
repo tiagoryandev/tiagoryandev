@@ -4,7 +4,9 @@ import {
 	VscSearch as Search,
 	VscSourceControl as SourceControl,
 	VscDebugAlt as DebugAlt,
-	VscExtensions as Extensions
+	VscExtensions as Extensions,
+	VscAccount as Account,
+	VscSettingsGear as SettingsGear
 } from "react-icons/vsc";
 
 type Props = {
@@ -13,9 +15,9 @@ type Props = {
 
 const WindowSidebar: React.FC<Props> = ({ pageIn }) => {
 	return (
-		<div className="col-span-1 bg-slate-800">
+		<div className="col-span-1 flex flex-col justify-between bg-slate-800">
 			<div className="flex flex-col items-center">
-				<div className={`flex items-center justify-center p-2 py-3 w-full border-l-2 ${pageIn == "files" ? "border-slate-500" : "border-slate-800 hover:border-slate-700"} hover:bg-slate-700 transition-colors cursor-pointer`}>
+				<div className={`flex items-center justify-center px-2 py-3 w-full border-l-2 ${pageIn == "files" ? "border-slate-500" : "border-slate-800 hover:border-slate-700"} hover:bg-slate-700 transition-colors cursor-pointer`}>
 					<Files className="text-zinc-400 text-2xl hover:text-zinc-100" />
 				</div>
 				<div className={`flex items-center justify-center px-2 py-3 w-full border-l-2 ${pageIn == "search" ? "border-slate-500" : "border-slate-800 hover:border-slate-700"} hover:bg-slate-700 transition-colors cursor-pointer`}>
@@ -30,6 +32,10 @@ const WindowSidebar: React.FC<Props> = ({ pageIn }) => {
 				<div className={`flex items-center justify-center p-2 py-3 w-full border-l-2 ${pageIn == "extensions" ? "border-slate-500" : "border-slate-800 hover:border-slate-700"} hover:bg-slate-700 transition-colors cursor-pointer`}>
 					<Extensions className="text-zinc-400 text-2xl hover:text-zinc-100" />
 				</div>
+			</div>
+			<div className="flex flex-col items-center px-2 py-3 gap-5">
+				<Account className="text-zinc-400 text-2xl hover:text-zinc-200 cursor-pointer" />
+				<SettingsGear className="text-zinc-400 text-2xl hover:text-zinc-200 cursor-pointer" />
 			</div>
 		</div>
 	);
