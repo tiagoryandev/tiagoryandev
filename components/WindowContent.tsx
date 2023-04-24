@@ -1,8 +1,12 @@
 import React from "react";
 
-const WindowContent: React.FC = () => {
+type Props = {
+	children: React.ReactNode;
+};
+
+const WindowContent: React.FC<Props> = ({ children }) => {
 	return (
-		<div className="col-span-1"></div>
+		<div className="col-span-1">{children}</div>
 	);
 };
 
