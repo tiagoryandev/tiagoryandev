@@ -1,0 +1,24 @@
+[
+	{
+		"type": "folder",
+		"name": "tiagoryandev",
+		"files": [
+			{
+				"type": "folder",
+				"name": "visual-studio-code",
+				"files": [
+					{
+						"type": "file",
+						"name": "settings",
+						"extension": "json"
+					}
+				]
+			},
+			{
+				"type": "file",
+				"name": "readme",
+				"extension": "md"
+			}
+		]
+	}
+]
