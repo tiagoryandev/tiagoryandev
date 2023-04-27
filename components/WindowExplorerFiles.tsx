@@ -5,11 +5,10 @@ import {
 	VscRefresh as Refresh,
 	VscCollapseAll as CollapseAll,
 	VscEllipsis as Ellipsis,
-	VscChevronDown as ChrevronDown,
-	VscFolder as Folder
+	VscChevronDown as ChevronDown,
+	VscFolder as Folder,
+	VscFileCode as File
 } from "react-icons/vsc";
-
-import explorerFilesData from "../database/explorer-files.json";
 
 const WindowExplorerFiles: React.FC = () => {
 	return (
@@ -35,9 +34,27 @@ const WindowExplorerFiles: React.FC = () => {
 				</div>
 			</div>
 
-			{/* Explorer Files */}
-
-
+			<div className="w-full">
+				<div className="flex items-center gap-1 h-6 cursor-pointer hover:bg-slate-700">
+					<ChevronDown className="text-md text-zinc-300" />
+					<Folder className="text-md text-zinc-300" />
+					<span className="text-sm text-zinc-300 select-none">visual-studio-code</span>
+				</div>
+				<div className="flex flex-col">
+					<div className="flex items-center h-6 gap-1 pl-4 cursor-pointer hover:bg-slate-700">
+						<File className="text-md text-zinc-300" />
+						<span className="text-sm text-zinc-300 select-none">index.js</span>
+					</div>
+					<div className="flex items-center h-6 gap-1 pl-4 cursor-pointer hover:bg-slate-700">
+						<File className="text-md text-zinc-300" />
+						<span className="text-sm text-zinc-300 select-none">package.json</span>
+					</div>
+					<div className="flex items-center h-6 gap-1 pl-4 cursor-pointer hover:bg-slate-700">
+						<File className="text-md text-zinc-300" />
+						<span className="text-sm text-zinc-300 select-none">.gitignore</span>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };
