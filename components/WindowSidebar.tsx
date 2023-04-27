@@ -9,27 +9,36 @@ import {
 	VscSettingsGear as SettingsGear
 } from "react-icons/vsc";
 
+type Pages = "files" | "search" | "source-control" | "debug" | "extensions" | null;
+
 type Props = {
-	pageIn: "files" | "search" | "source-control" | "debug" | "extensions";
+	pageIn: Pages;
+	setOpenExplorer: React.Dispatch<React.SetStateAction<Pages>>;
 };
 
-const WindowSidebar: React.FC<Props> = ({ pageIn }) => {
+const WindowSidebar: React.FC<Props> = ({ pageIn, setOpenExplorer }) => {
+	const handleExplorer = (page: Pages) => {
+		const value = pageIn == null ? page : (pageIn == page ? null : page);
+
+		setOpenExplorer(value);
+	};
+
 	return (
 		<div className="col-span-1 flex flex-col justify-between bg-slate-800">
 			<div className="flex flex-col items-center">
-				<div className={`flex items-center justify-center px-2 py-3 w-full border-l-2 ${pageIn == "files" ? "border-slate-500" : "border-slate-800 hover:border-slate-700"} hover:bg-slate-700 transition-colors cursor-pointer`}>
+				<div onClick={() => handleExplorer("files")} className={`flex items-center justify-center px-2 py-3 w-full border-l-2 ${pageIn == "files" ? "border-slate-500" : "border-slate-800 hover:border-slate-700"} hover:bg-slate-700 transition-colors cursor-pointer`}>
 					<Files className="text-zinc-400 text-2xl hover:text-zinc-100" />
 				</div>
-				<div className={`flex items-center justify-center px-2 py-3 w-full border-l-2 ${pageIn == "search" ? "border-slate-500" : "border-slate-800 hover:border-slate-700"} hover:bg-slate-700 transition-colors cursor-pointer`}>
+				<div onClick={() => handleExplorer("search")} className={`flex items-center justify-center px-2 py-3 w-full border-l-2 ${pageIn == "search" ? "border-slate-500" : "border-slate-800 hover:border-slate-700"} hover:bg-slate-700 transition-colors cursor-pointer`}>
 					<Search className="text-zinc-400 text-2xl hover:text-zinc-100" />
 				</div>
-				<div className={`flex items-center justify-center p-2 py-3 w-full border-l-2 ${pageIn == "source-control" ? "border-slate-500" : "border-slate-800 hover:border-slate-700"} hover:bg-slate-700 transition-colors cursor-pointer`}>
+				<div onClick={() => handleExplorer("source-control")} className={`flex items-center justify-center p-2 py-3 w-full border-l-2 ${pageIn == "source-control" ? "border-slate-500" : "border-slate-800 hover:border-slate-700"} hover:bg-slate-700 transition-colors cursor-pointer`}>
 					<SourceControl className="text-zinc-400 text-2xl hover:text-zinc-100" />
 				</div>
-				<div className={`flex items-center justify-center p-2 py-3 w-full border-l-2 ${pageIn == "debug" ? "border-slate-500" : "border-slate-800 hover:border-slate-700"} hover:bg-slate-700 transition-colors cursor-pointer`}>
+				<div onClick={() => handleExplorer("debug")} className={`flex items-center justify-center p-2 py-3 w-full border-l-2 ${pageIn == "debug" ? "border-slate-500" : "border-slate-800 hover:border-slate-700"} hover:bg-slate-700 transition-colors cursor-pointer`}>
 					<DebugAlt className="text-zinc-400 text-2xl hover:text-zinc-100" />
 				</div>
-				<div className={`flex items-center justify-center p-2 py-3 w-full border-l-2 ${pageIn == "extensions" ? "border-slate-500" : "border-slate-800 hover:border-slate-700"} hover:bg-slate-700 transition-colors cursor-pointer`}>
+				<div onClick={() => handleExplorer("extensions")} className={`flex items-center justify-center p-2 py-3 w-full border-l-2 ${pageIn == "extensions" ? "border-slate-500" : "border-slate-800 hover:border-slate-700"} hover:bg-slate-700 transition-colors cursor-pointer`}>
 					<Extensions className="text-zinc-400 text-2xl hover:text-zinc-100" />
 				</div>
 			</div>
