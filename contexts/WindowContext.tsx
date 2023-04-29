@@ -6,7 +6,7 @@ import {
 	WindowPages
 } from "../types/WindowContextTypes";
 
-export const WindowContext = createContext<WindowContextData | null>(null);
+export const WindowContext = createContext<WindowContextData>({} as WindowContextData);
 
 export const WindowProvider: React.FC<WindowProviderProps> = ({ children }) => {
 	const [explorerSection, setExplorerSection] = useState<WindowPages | null>(null);

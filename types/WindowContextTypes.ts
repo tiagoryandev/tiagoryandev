@@ -1,6 +1,6 @@
 import React from "react";
 
-export type WindowPages = "home" | "jobs";
+export type WindowPages = "home" | "about" | "jobs" | "projects" | "source-code";
 
 export type WindowProviderProps = {
 	children: React.ReactNode;

@@ -1,15 +1,9 @@
 import React from "react";
 
-import WindowExplorerFiles from "./WindowExplorerFiles";
-
-type Props = {
-	content: "search" | "files" | "source-control" | "debug" | "extensions";
-};
-
-const WindowExplorer: React.FC<Props> = ({ content }) => {
+const WindowExplorer: React.FC = () => {
 	return (
 		<div className="col-span-1">
-			<WindowExplorerFiles />
+		
 		</div>
 	);
 };
