@@ -12,7 +12,7 @@ const WindowExplorer: React.FC<Props> = ({ sourceCodeCommits }) => {
 	const { explorerSection } = useContext(WindowContext);
 
 	return (
-		<div className="col-span-1 overflow-hidden">
+		<div className="col-span-1 row-span-1 h-full overflow-hidden">
 			<WindowExplorerSourceCode isOpen={explorerSection == "source-code"} sourceCodeCommits={sourceCodeCommits || []} />
 		</div>
 	);

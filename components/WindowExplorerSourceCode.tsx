@@ -18,7 +18,7 @@ const WindowExplorerSourceCode: React.FC<Props> = ({ sourceCodeCommits, isOpen }
 				<h1 className="text-xs text-zinc-100 select-none">SOURCE CODE</h1>
 			</div>
 
-			<div className="flex flex-col h-full overflow-scroll">
+			<div className="h-full pb-10 overflow-scroll scrollbar-thin scrollbar-track-transparent scrollbar-thumb-slate-600">
 				{sourceCodeCommits.map((data) => (
 					<div key={data.sha} className="flex flex-col gap-1 w-full p-2 hover:bg-slate-700">
 						<div className="flex items-center justify-between gap-2">
