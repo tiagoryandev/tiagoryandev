@@ -1,4 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import {
 	VscHome as Home,
 	VscSearch as About,
@@ -9,36 +11,27 @@ import {
 	VscSettingsGear as SettingsGear
 } from "react-icons/vsc";
 
-import { WindowContext } from "../contexts/WindowContext";
-import { WindowPages } from "../types/WindowContextTypes";
-
 const WindowSidebar: React.FC = () => {
-	const { explorerSection, setExplorerSection } = useContext(WindowContext);
-	
-	const handleExplorerSection = (section: WindowPages) => {
-		const newSection = explorerSection == null ? section : (explorerSection == section ? null : section);
-
-		setExplorerSection(newSection);
-	};
+	const router = useRouter();
 
 	return (
 		<div className="col-span-1 flex flex-col justify-between bg-slate-800">
 			<div className="flex flex-col items-center">
-				<div onClick={() => handleExplorerSection("home")} className={`group flex items-center justify-center w-full px-2 py-3 border-x-2 border-transparent ${explorerSection == "home" && "border-l-slate-500"} hover:bg-slate-700 transition-colors cursor-pointer`}>
+				<Link href="/" className={`group flex items-center justify-center w-full px-2 py-3 border-x-2 border-transparent ${router.route == "/" && "border-l-slate-500"} hover:bg-slate-700 transition-colors cursor-pointer`}>
 					<Home className="text-zinc-400 text-2xl group-hover:text-zinc-100" />
-				</div>
-				<div onClick={() => handleExplorerSection("about")} className={`group flex items-center justify-center w-full px-2 py-3 border-x-2 border-transparent ${explorerSection == "about" && "border-l-slate-500"} hover:bg-slate-700 transition-colors cursor-pointer`}>
+				</Link>
+				<Link href="/about" className={`group flex items-center justify-center w-full px-2 py-3 border-x-2 border-transparent ${router.route.startsWith("/about") && "border-l-slate-500"} hover:bg-slate-700 transition-colors cursor-pointer`}>
 					<About className="text-zinc-400 text-2xl group-hover:text-zinc-100" />
-				</div>
-				<div onClick={() => handleExplorerSection("jobs")} className={`group flex items-center justify-center w-full px-2 py-3 border-x-2 border-transparent ${explorerSection == "jobs" && "border-l-slate-500"} hover:bg-slate-700 transition-colors cursor-pointer`}>
+				</Link>
+				<Link href="/projects" className={`group flex items-center justify-center w-full px-2 py-3 border-x-2 border-transparent ${router.route.startsWith("/jobs") && "border-l-slate-500"} hover:bg-slate-700 transition-colors cursor-pointer`}>
 					<Projects className="text-zinc-400 text-2xl group-hover:text-zinc-100" />
-				</div>
-				<div onClick={() => handleExplorerSection("projects")} className={`group flex items-center justify-center w-full px-2 py-3 border-x-2 border-transparent ${explorerSection == "projects" && "border-l-slate-500"} hover:bg-slate-700 transition-colors cursor-pointer`}>
+				</Link>
+				<Link href="/jobs" className={`group flex items-center justify-center w-full px-2 py-3 border-x-2 border-transparent ${router.route.startsWith("/projects") && "border-l-slate-500"} hover:bg-slate-700 transition-colors cursor-pointer`}>
 					<Jobs className="text-zinc-400 text-2xl group-hover:text-zinc-100" />
-				</div>
-				<div onClick={() => handleExplorerSection("source-code")} className={`group flex items-center justify-center w-full px-2 py-3 border-x-2 border-transparent ${explorerSection == "source-code" && "border-l-slate-500"} hover:bg-slate-700 transition-colors cursor-pointer`}>
+				</Link>
+				<Link href="/source-code" className={`group flex items-center justify-center w-full px-2 py-3 border-x-2 border-transparent ${router.route.startsWith("/source-code") && "border-l-slate-500"} hover:bg-slate-700 transition-colors cursor-pointer`}>
 					<SourceCode className="text-zinc-400 text-2xl group-hover:text-zinc-100" />
-				</div>
+				</Link>
 			</div>
 			<div className="flex flex-col items-center px-2 py-3 gap-5">
 				<Account className="text-zinc-400 text-2xl hover:text-zinc-200 cursor-pointer" />

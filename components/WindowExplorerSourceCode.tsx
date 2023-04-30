@@ -5,15 +5,14 @@ import { useRouter } from "next/router";
 import { SourceCodeCommit } from "../types/WindowContextTypes";
 
 type Props = {
-	isOpen: boolean;
 	sourceCodeCommits: SourceCodeCommit[];
 };
 
-const WindowExplorerSourceCode: React.FC<Props> = ({ sourceCodeCommits, isOpen }) => {
+const WindowExplorerSourceCode: React.FC<Props> = ({ sourceCodeCommits }) => {
 	const router = useRouter();
 
 	return (
-		<div className={`${router.route.startsWith("/source-code") && !isOpen && "hidden"} w-full h-full bg-slate-800`}>
+		<div className={`${!router.route.startsWith("/source-code") && "hidden"} w-full h-full bg-slate-800`}>
 			<div className="px-2 py-3">
 				<h1 className="text-xs text-zinc-100 select-none">SOURCE CODE</h1>
 			</div>

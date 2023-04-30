@@ -1,4 +1,4 @@
-import { NextPage, GetServerSideProps } from "next";
+import { NextPage, GetStaticProps } from "next";
 import axios from "axios";
 
 import WindowLayout from "../components/WindowLayout";
@@ -18,7 +18,7 @@ const SourceCode: NextPage<Props> = ({ sourceCodeCommits }) => {
 	);
 };
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
 	const commits = await axios.get<SourceCodeCommit[]>("https://api.github.com/repos/tiagoryandev/tiagoryandev/commits");
 
 	return {
