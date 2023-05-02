@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
 
 import { SourceCodeCommit } from "../types/WindowContextTypes";
@@ -22,7 +23,13 @@ const WindowExplorerSourceCode: React.FC<Props> = ({ sourceCodeCommits }) => {
 					<div key={data.sha} className="flex flex-col gap-1 w-full p-2 hover:bg-slate-700">
 						<div className="flex items-center justify-between gap-2">
 							<div className="flex items-center gap-2">
-								<div className={`w-5 h-5 bg-cover bg-[url(https://github.com/${data.commit.committer.name}.png?size=50)] rounded-full`} />
+								<Image
+									src={data.author.avatar_url}
+									alt="Github Avatar"
+									width={20}
+									height={20}
+									className="rounded-full"
+								/>
 								<Link href={`https://github.com/${data.commit.committer.name}`} className="text-sm text-zinc-200 select-none cursor-pointer hover:underline">{data.commit.committer.name}</Link>
 							</div>
 							<Link href={data.html_url} className="text-sm text-blue-500 select-none cursor-pointer hover:underline">#{data.sha.slice(0, 7)}</Link>

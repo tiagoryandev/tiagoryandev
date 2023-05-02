@@ -15,8 +15,8 @@ const Home: NextPage = () => {
 						height={150}
 						className="rounded-xl mb-5"
 					/>
-					<h1 className="text-center text-4xl text-zinc-100 font-bold">Tiago Ryan</h1>
-					<h2 className="text-center text-xl text-green-500">FullStack Developer</h2>
+					<h1 className="text-center text-4xl text-zinc-100 font-bold select-none">Tiago Ryan</h1>
+					<h2 className="text-center text-xl text-green-500 select-none">FullStack Developer</h2>
 				</div>
 			</WindowLayout>
 		</div>

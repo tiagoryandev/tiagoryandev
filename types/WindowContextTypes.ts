@@ -13,6 +13,9 @@ export type SourceCodeCommit = {
 		message: string;
 	};
 	html_url: string;
+	author: {
+		avatar_url: string;
+	};
 };
 
 export type WindowProviderProps = {
