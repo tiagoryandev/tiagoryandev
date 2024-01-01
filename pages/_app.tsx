@@ -1,15 +1,19 @@
-import React from "react";
+import "@/styles/globals.css";
+
+import { Inter } from "next/font/google";
+
 import type { AppProps } from "next/app";
 
-import "@/styles/globals.css";
-import { WindowProvider } from "@/contexts/WindowContext";
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
-const App: React.FC<AppProps> = ({ Component, pageProps }) => {
-	return (
-		<WindowProvider>
-			<Component {...pageProps} />
-		</WindowProvider>
-	);
-};
-
-export default App;
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <div className={`${inter.variable} font-sans`}>
+      <Component {...pageProps} />
+    </div>
+  );
+}
