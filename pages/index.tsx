@@ -1,3 +1,9 @@
+import WindowLayout from "@components/WindowLayout";
+
 export default function Home() {
-  return <div></div>;
+  return (
+    <div className="h-screen w-screen overflow-hidden p-5">
+      <WindowLayout></WindowLayout>
+    </div>
+  );
 }
