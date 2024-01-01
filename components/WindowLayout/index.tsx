@@ -11,7 +11,7 @@ interface WindowLayoutProps {
 }
 
 export default function WindowLayout({ children }: WindowLayoutProps) {
-  const { controls, windowData, windowRef, handleResizeWindow } =
+  const { controls, draggableArea, windowData, windowRef, handleResizeWindow } =
     useContext(MotionWindowContext);
 
   return (
@@ -20,6 +20,8 @@ export default function WindowLayout({ children }: WindowLayoutProps) {
         drag
         dragListener={false}
         dragControls={controls}
+        dragElastic={0}
+        dragConstraints={draggableArea}
         dragTransition={{
           power: 0,
         }}
