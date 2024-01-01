@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import {
   VscLayoutSidebarLeftOff,
   VscLayoutPanelOff,
@@ -5,9 +6,16 @@ import {
   VscLayout,
 } from "react-icons/vsc";
 
+import { MotionWindowContext } from "@contexts/MotionWindowContext";
+
 export default function WindowHead() {
+  const { handleStartDrag } = useContext(MotionWindowContext);
+
   return (
-    <div className="grid grid-cols-3 justify-between rounded-t-md bg-neutral-700 p-2">
+    <div
+      onPointerDown={handleStartDrag}
+      className="grid grid-cols-3 justify-between rounded-t-md bg-neutral-700 p-2"
+    >
       <div className="flex items-center gap-2">
         <div className="h-3 w-3 cursor-pointer rounded-full bg-red-400 transition-colors duration-150 hover:bg-red-500"></div>
         <div className="h-3 w-3 cursor-pointer rounded-full bg-yellow-500 transition-colors duration-150 hover:bg-yellow-500"></div>

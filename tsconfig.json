@@ -19,6 +19,8 @@
 		"jsx": "preserve",
 		"incremental": true,
 		"paths": {
+			"@interfaces/*": ["./interfaces/*"],
+			"@contexts/*": ["./contexts/*"],
 			"@components/*": [
 				"./components/*"
 			]

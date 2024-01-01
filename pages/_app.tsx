@@ -1,8 +1,10 @@
-import "@/styles/globals.css";
+import "../styles/globals.css";
 
 import { Inter } from "next/font/google";
 
 import type { AppProps } from "next/app";
+
+import { MotionWindowProvider } from "@contexts/MotionWindowContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,7 +15,9 @@ const inter = Inter({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={`${inter.variable} font-sans`}>
-      <Component {...pageProps} />
+      <MotionWindowProvider>
+        <Component {...pageProps} />
+      </MotionWindowProvider>
     </div>
   );
 }
