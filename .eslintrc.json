@@ -7,6 +7,7 @@
 		"eslint:recommended",
 		"plugin:react/recommended",
 		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended",
 		"next/core-web-vitals"
 	],
 	"overrides": [],
@@ -19,22 +20,5 @@
 		"react",
 		"@typescript-eslint"
 	],
-	"rules": {
-		"indent": [
-			"error",
-			"tab"
-		],
-		"linebreak-style": [
-			"error",
-			"unix"
-		],
-		"quotes": [
-			"error",
-			"double"
-		],
-		"semi": [
-			"error",
-			"always"
-		]
-	}
+	"rules": {}
 }
