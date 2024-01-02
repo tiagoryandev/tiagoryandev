@@ -48,9 +48,8 @@ export default function WindowLayout({ children }: WindowLayoutProps) {
       >
         <WindowHead />
         <WindowSidebar />
-        <div className="border-r-[1px] border-neutral-700">
+        <div className="h-full w-full overflow-auto border-r-[1px] border-neutral-700 p-5">
           {children}
-          <span className="text-zinc-100">test</span>
         </div>
         <WindowFooter />
       </motion.div>
