@@ -38,8 +38,8 @@ export default function WindowFooter() {
           </div>
         </div>
         <div className="flex cursor-pointer items-center gap-1 px-2 py-1 hover:bg-fuchsia-700">
-          <VscGithubAlt className="text-sm text-zinc-100" />
-          <span className="select-none text-xs font-light text-zinc-100">
+          <VscGithubAlt className="flex-shrink-0 text-sm text-zinc-100" />
+          <span className="line-clamp-1 select-none text-xs font-light text-zinc-100">
             tiagoryandev - Github
           </span>
         </div>

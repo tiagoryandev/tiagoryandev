@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html, body {
-	background-image: url(https://cdn.osxdaily.com/wp-content/uploads/2019/06/macOS-Catalina-Dark-Mode.jpg);
+	background-image: url(../public/background-macos.png);
 	background-size: cover;
 	background-position: center;
 }
