@@ -8,7 +8,7 @@ export default function Home() {
   const { screenRef } = useContext(MotionWindowContext);
 
   return (
-    <div ref={screenRef} className="h-screen w-screen overflow-hidden">
+    <div ref={screenRef} className="flex h-screen w-screen overflow-hidden">
       <WindowLayout></WindowLayout>
     </div>
   );

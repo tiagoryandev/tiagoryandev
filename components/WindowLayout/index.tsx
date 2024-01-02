@@ -1,5 +1,5 @@
-import { ReactNode, useContext } from "react";
-import { motion } from "framer-motion";
+import { ReactNode, useEffect, useContext } from "react";
+import { motion, useAnimationControls } from "framer-motion";
 
 import { MotionWindowContext } from "@contexts/MotionWindowContext";
 
@@ -12,8 +12,20 @@ interface WindowLayoutProps {
 }
 
 export default function WindowLayout({ children }: WindowLayoutProps) {
-  const { controls, draggableArea, windowData, windowRef } =
+  const { controls, draggableArea, windowData, screenRef, windowRef } =
     useContext(MotionWindowContext);
+
+  const animationControls = useAnimationControls();
+
+  useEffect(() => {
+    if (screenRef.current && windowRef.current) {
+      animationControls.set({
+        x: (screenRef.current.clientWidth - windowRef.current.clientWidth) / 2,
+        y:
+          (screenRef.current.clientHeight - windowRef.current.clientHeight) / 2,
+      });
+    }
+  }, [animationControls, screenRef, windowRef]);
 
   return (
     <>
@@ -26,6 +38,7 @@ export default function WindowLayout({ children }: WindowLayoutProps) {
         dragTransition={{
           power: 0,
         }}
+        animate={animationControls}
         ref={windowRef}
         className="grid grid-cols-[fit-content(100%)_1fr] grid-rows-[fit-content(100%)_auto_fit-content(100%)] rounded-md bg-neutral-900 drop-shadow-[0px_0px_10px_#000000]"
         style={{
