@@ -14,7 +14,7 @@ export default function WindowHead() {
   return (
     <div
       onPointerDown={handleStartDrag}
-      className="grid grid-cols-3 justify-between rounded-t-md bg-neutral-700 p-2"
+      className="grid grid-cols-3 justify-between rounded-t-md border-x-[1px] border-t-[1px] border-neutral-600 bg-neutral-700 p-2"
     >
       <div className="flex items-center gap-2">
         <div className="h-3 w-3 cursor-pointer rounded-full bg-red-400 transition-colors duration-150 hover:bg-red-500"></div>
