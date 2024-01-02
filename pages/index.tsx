@@ -32,30 +32,20 @@ export default function Home() {
 
           <div className="w-full border-t-[1px] border-neutral-700" />
 
-          <p className="text-zinc-100">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quod
-            sed veniam repellat provident suscipit numquam consectetur ab dolor
-            ex voluptatibus, dolore ullam cupiditate magni! Nam earum
-            consequuntur tempora rem.
-          </p>
-          <p className="text-zinc-100">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quod
-            sed veniam repellat provident suscipit numquam consectetur ab dolor
-            ex voluptatibus, dolore ullam cupiditate magni! Nam earum
-            consequuntur tempora rem.
-          </p>
-          <p className="text-zinc-100">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quod
-            sed veniam repellat provident suscipit numquam consectetur ab dolor
-            ex voluptatibus, dolore ullam cupiditate magni! Nam earum
-            consequuntur tempora rem.
-          </p>
-          <p className="text-zinc-100">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quod
-            sed veniam repellat provident suscipit numquam consectetur ab dolor
-            ex voluptatibus, dolore ullam cupiditate magni! Nam earum
-            consequuntur tempora rem.
-          </p>
+          <div className="flex flex-col gap-2">
+            <h1 className="text-xl font-medium text-zinc-100">Quem sou eu?</h1>
+            <p className="w-full max-w-2xl text-zinc-100">
+              Olá, sou Tiago Ryan. Ingressei na programação aos 13-14 anos,
+              iniciando com o desenvolvimento de bots para Discord em JavaScript
+              por cerca de dois anos. Posteriormente, direcionei meu foco para o
+              desenvolvimento web, começando no backend com Node.js e
+              posteriormente explorando o frontend com React. Essa jornada
+              enriqueceu minhas habilidades técnicas e proporcionou uma
+              compreensão abrangente do ciclo de desenvolvimento de software.
+              Estou entusiasmado para continuar aprendendo e contribuindo para a
+              comunidade.
+            </p>
+          </div>
         </div>
       </WindowLayout>
     </div>

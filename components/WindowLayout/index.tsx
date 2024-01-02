@@ -48,7 +48,7 @@ export default function WindowLayout({ children }: WindowLayoutProps) {
       >
         <WindowHead />
         <WindowSidebar />
-        <div className="h-full w-full overflow-auto border-r-[1px] border-neutral-700 p-5">
+        <div className="h-full w-full overflow-auto scroll-smooth border-r-[1px] border-neutral-700 p-5 scrollbar-thin scrollbar-track-neutral-900 scrollbar-thumb-neutral-800">
           {children}
         </div>
         <WindowFooter />
