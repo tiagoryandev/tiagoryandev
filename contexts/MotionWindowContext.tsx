@@ -31,39 +31,70 @@ export function MotionWindowProvider({ children }: MotionWindowProviderProps) {
 
   useEffect(() => {
     if (screenRef.current) {
+      const windowWidthSize = windowWidth.get();
+      const windowHeightSize = windowHeight.get();
+
+      setDraggableArea({
+        top: 0,
+        left: 0,
+        right:
+          windowWidthSize >= screenRef.current.clientWidth
+            ? 0
+            : screenRef.current.clientWidth - windowWidthSize,
+        bottom:
+          windowHeightSize >= screenRef.current.clientHeight
+            ? 0
+            : screenRef.current.clientHeight - windowHeightSize,
+      });
+    }
+  }, [screenRef, windowWidth, windowHeight]);
+
+  useEffect(() => {
+    if (screenRef.current && windowRef.current) {
       windowWidth.set(
-        screenRef.current.clientWidth > 600
-          ? 600
-          : screenRef.current.clientWidth,
+        screenRef.current.clientWidth <= windowWidth.get()
+          ? screenRef.current.clientWidth
+          : windowWidth.get(),
       );
 
       windowHeight.set(
-        screenRef.current.clientHeight > 400
-          ? 400
-          : screenRef.current.clientHeight,
+        screenRef.current.clientHeight <= windowHeight.get()
+          ? screenRef.current.clientHeight
+          : windowHeight.get(),
       );
     }
 
     window.onresize = () => {
-      setDraggableArea({
-        top: 0,
-        left: 0,
-        right: window.innerWidth - windowWidth.get(),
-        bottom: window.innerHeight - windowHeight.get(),
-      });
+      if (windowRef.current) {
+        const windowElement = windowRef.current.getBoundingClientRect();
+        const currentWidth = windowWidth.get();
+        const currentHeight = windowHeight.get();
+
+        windowWidth.set(
+          window.innerWidth - windowElement.left > currentWidth
+            ? currentWidth >= 600
+              ? currentWidth
+              : window.innerWidth - windowElement.left
+            : window.innerWidth - windowElement.left,
+        );
+
+        windowHeight.set(
+          window.innerHeight - windowElement.top > currentHeight
+            ? currentHeight >= 400
+              ? currentHeight
+              : window.innerHeight - windowElement.top
+            : window.innerHeight - windowElement.top,
+        );
+
+        setDraggableArea({
+          top: 0,
+          left: 0,
+          right: window.innerWidth - windowWidth.get(),
+          bottom: window.innerHeight - windowHeight.get(),
+        });
+      }
     };
   }, [windowWidth, windowHeight]);
-
-  useEffect(() => {
-    if (screenRef.current) {
-      setDraggableArea({
-        top: 0,
-        left: 0,
-        right: screenRef.current.clientWidth - windowWidth.get(),
-        bottom: screenRef.current.clientHeight - windowHeight.get(),
-      });
-    }
-  }, [screenRef, windowWidth, windowHeight]);
 
   function handleStartDrag(event: PointerEvent<HTMLDivElement>) {
     controls.start(event);
@@ -79,20 +110,14 @@ export function MotionWindowProvider({ children }: MotionWindowProviderProps) {
       const newHeight = currentWindowHeight + info.delta.y;
 
       if (
-        newWidth >
-          (screenRef.current.clientWidth < 600
-            ? screenRef.current.clientWidth
-            : 600) &&
+        newWidth > (currentWindowWidth > 600 ? 600 : currentWindowWidth) &&
         windowElement.left + newWidth <= screenRef.current.clientWidth
       ) {
         windowWidth.set(newWidth);
       }
 
       if (
-        newHeight >
-          (screenRef.current.clientHeight < 400
-            ? screenRef.current.clientHeight
-            : 400) &&
+        newHeight > (currentWindowHeight > 400 ? 400 : currentWindowHeight) &&
         windowElement.top + newHeight <= screenRef.current.clientHeight
       ) {
         windowHeight.set(newHeight);
