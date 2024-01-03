@@ -6,7 +6,7 @@ interface WindowExplorerProps {
 
 export default function WindowExplorer({ children }: WindowExplorerProps) {
   return (
-    <div className="h-full w-[250px] overflow-y-hidden bg-neutral-800">
+    <div className="h-full w-[250px] overflow-y-hidden bg-[rgba(38,38,38,.6)]">
       {children}
     </div>
   );

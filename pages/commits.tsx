@@ -27,17 +27,17 @@ export default function Commits({ sourceCodeCommits }: CommitsProps) {
   return (
     <>
       <WindowExplorer>
-        <div className="px-2 py-3">
+        <div className="flex h-10 items-center px-3">
           <h1 className="select-none text-sm text-zinc-100">
             Commits do Projeto
           </h1>
         </div>
 
-        <div className="h-full overflow-scroll pb-10 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-slate-600">
+        <div className="h-[calc(100%-40px)] overflow-y-scroll scroll-smooth scrollbar-thin scrollbar-track-transparent scrollbar-thumb-neutral-800">
           {sourceCodeCommits.map((data) => (
             <div
               key={data.sha}
-              className="flex w-full flex-col gap-1 p-2 hover:bg-slate-700"
+              className="flex w-full flex-col gap-1 p-2 hover:bg-neutral-700"
             >
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2">
