@@ -28,9 +28,7 @@ export default function Commits({ sourceCodeCommits }: CommitsProps) {
     <>
       <WindowExplorer>
         <div className="flex h-10 items-center px-3">
-          <h1 className="select-none text-sm text-zinc-100">
-            Commits do Projeto
-          </h1>
+          <h1 className="select-none text-sm text-zinc-100">COMMITS</h1>
         </div>
 
         <div className="h-[calc(100%-40px)] overflow-y-scroll scroll-smooth scrollbar-thin scrollbar-track-transparent scrollbar-thumb-neutral-800">
@@ -81,7 +79,23 @@ export default function Commits({ sourceCodeCommits }: CommitsProps) {
         </div>
       </WindowExplorer>
       <WindowPage>
-        <span>commits</span>
+        <div className="flex flex-col gap-2">
+          <h1 className="select-none text-lg text-zinc-100">
+            Commits do Projeto
+          </h1>
+          <p className="font-light text-zinc-300">
+            Bem-vindo à página de commits do meu portfólio! Aqui, você pode
+            acompanhar todas as recentes modificações neste espaço que reflete
+            meu trabalho e habilidades.
+          </p>
+          <p className="font-light text-zinc-300">
+            Fique a vontade para explorar e analisar todas as alterações feitas
+            nesse projeto.
+          </p>
+          <span className="select-none text-sm font-light text-zinc-500">
+            Att. Tiago Ryan
+          </span>
+        </div>
       </WindowPage>
     </>
   );

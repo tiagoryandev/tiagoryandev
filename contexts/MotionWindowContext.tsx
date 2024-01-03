@@ -26,8 +26,8 @@ export function MotionWindowProvider({ children }: MotionWindowProviderProps) {
   });
   const windowRef = useRef<HTMLDivElement>(null);
   const screenRef = useRef<HTMLDivElement>(null);
-  const windowWidth = useMotionValue(600);
-  const windowHeight = useMotionValue(400);
+  const windowWidth = useMotionValue(1000);
+  const windowHeight = useMotionValue(600);
 
   useEffect(() => {
     if (screenRef.current) {
