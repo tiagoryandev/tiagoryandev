@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import WindowPage from "@components/WindowLayout/WindowPage";
 
@@ -123,6 +124,32 @@ export default function AboutMe() {
               </span>
             </div>
           </div>
+        </div>
+
+        <div className="w-full border-t-[1px] border-neutral-700" />
+
+        <div className="flex flex-col gap-2">
+          <h1 className="select-none text-xl font-medium text-zinc-100">
+            Links
+          </h1>
+          <ul className="list-disc">
+            <li className="ml-5 cursor-pointer select-none text-blue-500 hover:underline">
+              <Link
+                className="outline-none"
+                href="https://www.linkedin.com/in/tiagoryan"
+              >
+                Meu Linkedin
+              </Link>
+            </li>
+            <li className="ml-5 cursor-pointer select-none text-blue-500 hover:underline">
+              <Link
+                className="outline-none"
+                href="https://github.com/tiagoryandev"
+              >
+                Meu Github
+              </Link>
+            </li>
+          </ul>
         </div>
 
         <span className="select-none text-sm text-zinc-500">

@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { MdOutlineRoundedCorner } from "react-icons/md";
 import {
@@ -17,12 +18,18 @@ export default function WindowFooter() {
   return (
     <div className="col-span-2 flex w-full items-center justify-between rounded-b-md border-x-[1px] border-b-[1px] border-fuchsia-700 bg-fuchsia-800 group-data-[show-explorer=true]:col-span-3">
       <div className="flex items-center">
-        <div className="flex cursor-pointer items-center gap-1 rounded-bl-md px-2 py-1 hover:bg-fuchsia-700">
-          <VscSourceControl className="text-sm text-zinc-100" />
-          <span className="select-none text-xs font-light text-zinc-100">
-            master
-          </span>
-        </div>
+        <Link
+          href="https://github.com/tiagoryandev/tiagoryandev"
+          className="outline-none"
+        >
+          <div className="flex cursor-pointer items-center gap-1 rounded-bl-md px-2 py-1 hover:bg-fuchsia-700">
+            <VscSourceControl className="text-sm text-zinc-100" />
+            <span className="select-none text-xs font-light text-zinc-100">
+              master
+            </span>
+          </div>
+        </Link>
+
         <div className="flex cursor-pointer items-center gap-1 px-2 py-1 hover:bg-fuchsia-700">
           <div className="flex items-center gap-1">
             <VscError className="text-sm text-zinc-100" />
@@ -37,12 +44,14 @@ export default function WindowFooter() {
             </span>
           </div>
         </div>
-        <div className="flex cursor-pointer items-center gap-1 px-2 py-1 hover:bg-fuchsia-700">
-          <VscGithubAlt className="flex-shrink-0 text-sm text-zinc-100" />
-          <span className="line-clamp-1 select-none text-xs font-light text-zinc-100">
-            tiagoryandev - Github
-          </span>
-        </div>
+        <Link href="https://github.com/tiagoryandev" className="outline-none">
+          <div className="flex cursor-pointer items-center gap-1 px-2 py-1 hover:bg-fuchsia-700">
+            <VscGithubAlt className="flex-shrink-0 text-sm text-zinc-100" />
+            <span className="line-clamp-1 select-none text-xs font-light text-zinc-100">
+              tiagoryandev - Github
+            </span>
+          </div>
+        </Link>
       </div>
       <div className="flex items-center">
         <div className="flex items-center">
