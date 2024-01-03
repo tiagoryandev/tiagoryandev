@@ -1,4 +1,5 @@
 import axios from "axios";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,6 +27,9 @@ interface CommitsProps {
 export default function Commits({ sourceCodeCommits }: CommitsProps) {
   return (
     <>
+      <Head>
+        <title>Commits - Tiago Ryan | Portfólio</title>
+      </Head>
       <WindowExplorer>
         <div className="flex h-10 items-center px-3">
           <h1 className="select-none text-sm text-zinc-100">COMMITS</h1>
