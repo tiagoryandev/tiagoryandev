@@ -17,37 +17,37 @@ export default function WindowSidebar() {
         <Link href="/">
           <div
             data-selected={router.pathname == "/"}
-            className="group cursor-pointer border-l-2 border-l-transparent p-3 data-[selected=true]:border-l-zinc-200"
+            className="group/link cursor-pointer border-l-2 border-l-transparent p-3 data-[selected=true]:border-l-zinc-200"
           >
-            <VscFiles className="text-2xl text-zinc-500 group-hover:text-zinc-100 group-data-[selected=true]:text-zinc-100" />
+            <VscFiles className="text-2xl text-zinc-500 group-hover/link:text-zinc-100 group-data-[selected=true]/link:text-zinc-100" />
           </div>
         </Link>
 
         <Link href="/about-me" className="outline-none">
           <div
             data-selected={router.pathname == "/about-me"}
-            className="group cursor-pointer border-l-2 border-l-transparent p-3 data-[selected=true]:border-l-zinc-200"
+            className="group/link cursor-pointer border-l-2 border-l-transparent p-3 data-[selected=true]:border-l-zinc-200"
           >
-            <VscBook className="text-2xl text-zinc-500 group-hover:text-zinc-100 group-data-[selected=true]:text-zinc-100" />
+            <VscBook className="text-2xl text-zinc-500 group-hover/link:text-zinc-100 group-data-[selected=true]/link:text-zinc-100" />
           </div>
         </Link>
 
         <Link href="/commits" className="outline-none">
           <div
             data-selected={router.pathname == "/commits"}
-            className="group cursor-pointer border-l-2 border-l-transparent p-3 data-[selected=true]:border-l-zinc-200"
+            className="group/link cursor-pointer border-l-2 border-l-transparent p-3 data-[selected=true]:border-l-zinc-200"
           >
-            <VscSourceControl className="text-2xl text-zinc-500 group-hover:text-zinc-100 group-data-[selected=true]:text-zinc-100" />
+            <VscSourceControl className="text-2xl text-zinc-500 group-hover/link:text-zinc-100 group-data-[selected=true]/link:text-zinc-100" />
           </div>
         </Link>
       </div>
 
       <div className="flex min-h-[min-content] flex-col">
-        <div className="group cursor-pointer p-3">
-          <VscAccount className="text-2xl text-zinc-500 group-hover:text-zinc-100" />
+        <div className="group/link cursor-pointer p-3">
+          <VscAccount className="text-2xl text-zinc-500 group-hover/link:text-zinc-100" />
         </div>
-        <div className="group cursor-pointer p-3">
-          <VscGear className="text-2xl text-zinc-500 group-hover:text-zinc-100" />
+        <div className="group/link cursor-pointer p-3">
+          <VscGear className="text-2xl text-zinc-500 group-hover/link:text-zinc-100" />
         </div>
       </div>
     </div>

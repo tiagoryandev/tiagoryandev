@@ -1,3 +1,9 @@
+import WindowPage from "@components/WindowLayout/WindowPage";
+
 export default function Home() {
-  return <span>Hello World</span>;
+  return (
+    <WindowPage>
+      <span>Home</span>
+    </WindowPage>
+  );
 }

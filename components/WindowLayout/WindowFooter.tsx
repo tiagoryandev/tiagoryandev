@@ -15,7 +15,7 @@ export default function WindowFooter() {
   const { handleResizeWindow } = useContext(MotionWindowContext);
 
   return (
-    <div className="col-span-2 flex w-full items-center justify-between rounded-b-md border-x-[1px] border-b-[1px] border-fuchsia-700 bg-fuchsia-800">
+    <div className="col-span-2 flex w-full items-center justify-between rounded-b-md border-x-[1px] border-b-[1px] border-fuchsia-700 bg-fuchsia-800 group-data-[show-explorer=true]:col-span-3">
       <div className="flex items-center">
         <div className="flex cursor-pointer items-center gap-1 rounded-bl-md px-2 py-1 hover:bg-fuchsia-700">
           <VscSourceControl className="text-sm text-zinc-100" />

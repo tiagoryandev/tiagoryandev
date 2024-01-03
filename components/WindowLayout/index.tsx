@@ -1,17 +1,19 @@
 import { ReactNode, useEffect, useContext } from "react";
+import { useRouter } from "next/router";
 import { motion, useAnimationControls } from "framer-motion";
 
 import { MotionWindowContext } from "@contexts/MotionWindowContext";
 
 import WindowHead from "./WindowHead";
-import WindowFooter from "./WindowFooter";
 import WindowSidebar from "./WindowSidebar";
+import WindowFooter from "./WindowFooter";
 
 interface WindowLayoutProps {
   children?: ReactNode;
 }
 
 export default function WindowLayout({ children }: WindowLayoutProps) {
+  const router = useRouter();
   const { controls, draggableArea, windowData, screenRef, windowRef } =
     useContext(MotionWindowContext);
 
@@ -40,7 +42,8 @@ export default function WindowLayout({ children }: WindowLayoutProps) {
         }}
         animate={animationControls}
         ref={windowRef}
-        className="grid grid-cols-[fit-content(100%)_1fr] grid-rows-[fit-content(100%)_auto_fit-content(100%)] rounded-md bg-neutral-900 drop-shadow-[0px_0px_10px_#000000]"
+        data-show-explorer={router.pathname == "/commits"}
+        className="group grid grid-cols-[fit-content(100%)_1fr] grid-rows-[fit-content(100%)_auto_fit-content(100%)] rounded-md bg-neutral-900 drop-shadow-[0px_0px_10px_#000000] data-[show-explorer=true]:grid-cols-[fit-content(100%)_fit-content(100%)_1fr]"
         style={{
           width: windowData.width,
           height: windowData.height,
@@ -48,9 +51,7 @@ export default function WindowLayout({ children }: WindowLayoutProps) {
       >
         <WindowHead />
         <WindowSidebar />
-        <div className="h-full w-full overflow-auto scroll-smooth border-r-[1px] border-neutral-700 p-5 scrollbar-thin scrollbar-track-neutral-900 scrollbar-thumb-neutral-800">
-          {children}
-        </div>
+        {children}
         <WindowFooter />
       </motion.div>
     </>
